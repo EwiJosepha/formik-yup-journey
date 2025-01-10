@@ -1,20 +1,20 @@
 import React from 'react';
 import { Field } from 'formik';
 
-interface TextInputProps {
+interface TextareaProps {
   name: string;
   label: string;
 }
 
-const TextInput: React.FC<TextInputProps> = (props) => {
+const Textarea: React.FC<TextareaProps> = (props) => {
   const { name, label, ...rest } = props;
 
   return (
     <div>
       <label htmlFor={name}>{label}</label>
-      <Field name={name} id={name} {...rest} />
+      <Field as='textarea' name={name} id={name} {...rest} />
     </div>
   );
 }
 
-export default TextInput;
+export default Textarea;
